@@ -1,0 +1,46 @@
+<div class="search-result">
+  <div class="card">
+    <div class="card-header">
+      <h3>{{this.searchResult.cityName | uppercase}}</h3>
+    </div>
+
+    <div class="card-body">
+      <div *ngIf=!this.searchResult.error>
+        <div class="col-sm-10 row">
+          <div class="col-sm-3">
+            <div>
+              <h3>Latitude</h3>
+
+            </div>
+            <div>
+              {{this.searchResult.latitude}}
+            </div>
+          </div>
+
+          <div class="col-sm-4">
+            <div>
+              <h3>Longitude</h3>
+
+            </div>
+            <div>
+              {{this.searchResult.longitude}}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div *ngIf="this.searchResult.error">
+
+        <alert type="danger">
+          No Results found for the search .
+        </alert>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
