@@ -1,11 +1,11 @@
 <div class="search-result">
   <div class="card">
     <div class="card-header">
-      <h3>{{this.searchResult.cityName | uppercase}}</h3>
+      <h3>{{searchResult.cityName | uppercase}}</h3>
     </div>
 
     <div class="card-body">
-      <div *ngIf=!this.searchResult.error>
+      <div *ngIf=!searchResult.error>
         <div class="col-sm-10 row">
           <div class="col-sm-3">
             <div>
@@ -13,7 +13,7 @@
 
             </div>
             <div>
-              {{this.searchResult.latitude}}
+              {{searchResult.latitude}}
             </div>
           </div>
 
@@ -23,7 +23,7 @@
 
             </div>
             <div>
-              {{this.searchResult.longitude}}
+              {{searchResult.longitude}}
             </div>
           </div>
 
@@ -32,7 +32,7 @@
       </div>
 
 
-      <div *ngIf="this.searchResult.error">
+      <div *ngIf="searchResult.error">
 
         <alert type="danger">
           No Results found for the search .

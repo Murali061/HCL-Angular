@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg  navbar-light bg-info justify-content-center">
-  <a class="navbar-brand header-title" >{{this.appTitle}}</a>
+  <a class="navbar-brand header-title" >{{appTitle}}</a>
 </nav>
 <div class="search-form card">
   <div class="card-body">
   <form [formGroup]="cityForm" (ngSubmit)="onSubmit()">
-    <div *ngIf="this.formError">
+    <div *ngIf="formError">
 
       <alert type="danger">
        Please enter a valid city name
@@ -15,7 +15,7 @@
 
       <label class="col-sm-2"></label>
       <div class="col-sm-7">
-        <input id="city" placeholder="Enter a city name" formControlName="cityName" name="city" type="text" class="form-control"
+        <input id="city" (click)="onSearchChange()"  placeholder="Enter a city name" formControlName="cityName" name="city" type="text" class="form-control"
                [ngClass]="{'is-invalid': cityForm.get('cityName').touched && cityForm.get('cityName').invalid}"
         />
 
@@ -33,8 +33,8 @@
   </form>
 </div>
 </div>
-<app-search-result  *ngIf="this.processedResult" [searchData]="this.processedResult" ></app-search-result>
-<div *ngIf="this.loading" class="d-flex justify-content-center">
+<app-search-result  *ngIf="showResult" [searchData]="processedResult" ></app-search-result>
+<div *ngIf="loading" class="d-flex justify-content-center">
   <div class="spinner-grow text-dark" role="status">
     <span class="sr-only">Loading...</span>
   </div>
